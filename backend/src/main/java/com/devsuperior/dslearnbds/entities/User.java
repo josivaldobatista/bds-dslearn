@@ -154,4 +154,19 @@ public class User implements UserDetails {
 	public boolean isEnabled() {
 			return true;
 	}
+
+	/**
+	 * Testa se um determinado usuário possui um
+	 * determinado roleName.
+	 * @param roleName
+	 * @return true or false
+	 */
+	public boolean hasRole(String roleName) {
+		for (Role role : roles) {
+			if (role.getAuthority().equals(roleName)) {
+				return true;
+			}
+		}
+		return false;
+	}
 }
