@@ -2,7 +2,11 @@ package com.devsuperior.dslearnbds.services;
 
 import com.devsuperior.dslearnbds.dto.DeliverRevisionDTO;
 import com.devsuperior.dslearnbds.entities.Deliver;
+import com.devsuperior.dslearnbds.observers.DeliverRevisionObserver;
 import com.devsuperior.dslearnbds.repositories.DeliverRepository;
+
+import java.util.LinkedHashSet;
+import java.util.Set;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.access.prepost.PreAuthorize;
@@ -14,6 +18,8 @@ public class DeliverService {
 
   @Autowired
   private DeliverRepository repository;
+  
+  private Set<DeliverRevisionObserver> deliverRevisionObserve = new LinkedHashSet<>();
 
   @Transactional
   @PreAuthorize("hasAnyRole('ADMIN', 'INSTRUCTOR')")
@@ -23,5 +29,13 @@ public class DeliverService {
       deliver.setFeedback(dto.getFeedback());
       deliver.setCorrectCount(dto.getCorrectCount());
     repository.save(deliver);
+    for (DeliverRevisionObserver observer : deliverRevisionObserve) {
+      observer.onSaveRevision(deliver);
+    }
   }
+  
+  public void subscribeDeliverRevisionObserver(DeliverRevisionObserver observer) {
+	  deliverRevisionObserve.add(observer);
+  }
+  
 }
