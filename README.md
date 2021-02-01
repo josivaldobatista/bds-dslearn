@@ -2,7 +2,7 @@
 
 ## Ferramentas empregadas
 
-> Java, Spring Boot, Maven, H2, Postgresql, Postman, Spring Data JPA, Bean Validation, Spring Security, JWT, OAuth2, Heroku, Swagger, JPQL, Amazon S3, modelo conceitual, SQL seed, autorizações customizadas, padrões de projeto, SOLID, JUnit, Mockito, MockBean. O projeto do curso pode ser visto no meu GitHub logo abaixo.
+> Java, Spring Boot, Maven, H2, Postgresql, Postman, Spring Data JPA, Bean Validation, Spring Security, JWT, OAuth2, Heroku, Swagger, JPQL, Amazon S3, modelo conceitual, SQL seed, autorizações customizadas, padrões de projeto, SOLID, JUnit, Mockito, MockBean.
 
 ## Visão geral do processo de desenvolvimento
 
