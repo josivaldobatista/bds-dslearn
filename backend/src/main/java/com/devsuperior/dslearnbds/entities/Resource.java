@@ -41,7 +41,6 @@ public class Resource implements Serializable {
 
 	public Resource(Long id, String title, String description, Integer position, String imgUri, ResourceType type,
 			Offer offer) {
-		super();
 		this.id = id;
 		this.title = title;
 		this.description = description;

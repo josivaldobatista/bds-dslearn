@@ -42,12 +42,19 @@ public class Reply implements Serializable {
 	@ManyToMany
 	@JoinTable(name = "tb_reply_likes",
 		joinColumns = @JoinColumn(name = "reply_id"),
-		inverseJoinColumns = @JoinColumn(name = "user_id")
-	)
+		inverseJoinColumns = @JoinColumn(name = "user_id"))
 	private Set<User> likes = new HashSet<>();
 	
 	public Reply() {
 	}
+
+	public Reply(Long id, String body, Instant moment, Topic topic, User author) {
+    this.id = id;
+    this.body = body;
+    this.moment = moment;
+    this.topic = topic;
+    this.author = author;
+  }
 
 	public Long getId() {
 		return id;

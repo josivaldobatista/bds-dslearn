@@ -18,6 +18,7 @@ public class Section implements Serializable {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
+	
 	private String title;
 	private String description;
 	private Integer position;
@@ -36,7 +37,6 @@ public class Section implements Serializable {
 
 	public Section(Long id, String title, String description, Integer position, String imgUri, Resource resource,
 			Section prerequisite) {
-		super();
 		this.id = id;
 		this.title = title;
 		this.description = description;

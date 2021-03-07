@@ -23,6 +23,7 @@ public class Deliver implements Serializable {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
+	
 	private String uri;
 	
 	@Column(columnDefinition = "TIMESTAMP WITHOUT TIME ZONE")
@@ -35,8 +36,7 @@ public class Deliver implements Serializable {
 	@ManyToOne
 	@JoinColumns({  
 		@JoinColumn(name = "offer_id"), 
-		@JoinColumn(name = "user_id") 
-	})
+		@JoinColumn(name = "user_id")})
 	private Enrollment enrollment;
 	
 	@ManyToOne
@@ -48,7 +48,6 @@ public class Deliver implements Serializable {
 
 	public Deliver(Long id, String uri, Instant moment, DeliverStatus status, String feedback, Integer correctCount,
 			Enrollment enrollment, Lesson lesson) {
-		super();
 		this.id = id;
 		this.uri = uri;
 		this.moment = moment;

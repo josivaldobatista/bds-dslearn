@@ -31,6 +31,7 @@ public class User implements UserDetails {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
+
 	private String name;
 
 	@Column(unique = true)
@@ -51,7 +52,6 @@ public class User implements UserDetails {
 	}
 
 	public User(Long id, String name, String email, String password, Set<Role> roles) {
-		super();
 		this.id = id;
 		this.name = name;
 		this.email = email;

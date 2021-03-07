@@ -27,6 +27,7 @@ public class Topic implements Serializable {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
+
 	private String title;
 
 	@Column(columnDefinition = "TEXT")
@@ -64,7 +65,6 @@ public class Topic implements Serializable {
 	}
 
 	public Topic(Long id, String title, String body, Instant moment, User author, Offer offer, Lesson lesson) {
-		super();
 		this.id = id;
 		this.title = title;
 		this.body = body;

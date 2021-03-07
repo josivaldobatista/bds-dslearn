@@ -45,7 +45,6 @@ public class Offer implements Serializable {
 	}
 
 	public Offer(Long id, String edition, Instant startMoment, Instant endMoment, Course course) {
-		super();
 		this.id = id;
 		this.edition = edition;
 		this.startMoment = startMoment;
